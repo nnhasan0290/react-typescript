@@ -1,9 +1,19 @@
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
 import Event from "./components/Event";
+import StyleTypes from "./components/Styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
-    <>
-    <Event/>
-    </>
+  <>
+    <Event />
+    <StyleTypes
+      styles={{
+        border: "1px solid red",
+        backgroundColor: "green",
+        textTransform: "capitalize",
+      }}
+    />
+  </>
 );
