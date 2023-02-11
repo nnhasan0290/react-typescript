@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import Event from "./components/Event";
 import StyleTypes from "./components/Styles";
+import UseState from "./components/UseState";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,5 +16,6 @@ root.render(
         textTransform: "capitalize",
       }}
     />
+    <UseState/>
   </>
 );
