@@ -1,4 +1,6 @@
 import ReactDOM from "react-dom/client";
+import Consumer from "./components/context/Consumer";
+import ContextProvider from "./components/context/Context";
 import Event from "./components/Event";
 import StyleTypes from "./components/Styles";
 import UseReducer from "./components/UseReducer";
@@ -8,7 +10,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <>
+  <ContextProvider>
     <Event />
     <StyleTypes
       styles={{
@@ -19,5 +21,6 @@ root.render(
     />
     <UseState/>
     <UseReducer/>
-  </>
+    <Consumer/>
+  </ContextProvider>
 );
