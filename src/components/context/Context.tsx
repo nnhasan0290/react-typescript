@@ -1,25 +1,22 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 
-const theme = {
-  light: {
-    backgroundColor: "white",
-    color: "black",
-  },
-  dark: {
-    backgroundColor: "black",
-    color: "white",
-  },
-};
-
-const ThemeContext = React.createContext(theme);
+const ThemeContext = React.createContext<null | {
+  user: { name: string; email: string } | null;
+  setUser: React.Dispatch<any>;
+}>(null);
 
 type ContextType = {
   children: React.ReactNode;
 };
 
 const ContextProvider = ({ children }: ContextType) => {
+  const [user, setUser] = useState<null | { name: string; email: string }>(
+    null
+  );
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ user, setUser }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
